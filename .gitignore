@@ -1,0 +1,6 @@
+__pycache__/
+.ipynb_checkpoints/
+logs/
+data/
+vendor_sales_summary.csv
+inventory.db
