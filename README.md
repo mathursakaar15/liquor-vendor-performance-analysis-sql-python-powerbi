@@ -40,14 +40,14 @@ Effective inventory and sales management are critical in the retail sector. This
 - Multiple CSV files located in `/data/` folder (sales, vendors, inventory)
 - Summary table created from ingested data and used for analysis
 
-## Dataset
 This project uses the *Vendor Performance Dataset* originally uploaded on Kaggle:  
 [Vendor Performance Data on Kaggle](https://www.kaggle.com/datasets/ansarianam/vendor-performance-data)  
 
-⚠️ Note: The dataset is large (~1.6 GB for sales.csv). Please download it directly from Kaggle and place the files in the `data/` folder before running the notebooks.
-https://www.kaggle.com/datasets/ansarianam/vendor-performance-data
+⚠️ **Note:** The dataset is large (~1.6 GB for sales.csv). Please download all the files directly from Kaggle and place the files in the `data/` folder before running the notebooks.
 
-Test this repository with sample data provided. If you are using sample dataset and wish to execute full dataset later, delete inventory.db and vendor_sales_summary.csv from the root folder.
+⚠️ **Important:** This repo contains **sample CSV files** in `sample_data/` for testing.  
+To run the full dataset, delete `./inventory.db` and `./vendor_sales_summary`, then replace the sample CSVs in `./data/` with files downloaded from Kaggle.
+
 
 ---
 
@@ -70,15 +70,23 @@ vendor-performance-analysis/
 ├── Vendor Performance Report.pdf
 │
 ├── notebooks/                  # Jupyter notebooks
-│   ├── exploratory_data_analysis.ipynb
-│   ├── vendor_performance_analysis.ipynb
+│   ├── Exploratory_Data_Analysis.ipynb
+│   ├── Vendor Performance Analysis.ipynb
 │
 ├── scripts/                    # Python scripts for ingestion and processing
 │   ├── ingestion_db.py
 │   └── get_vendor_summary.py
 │
 ├── dashboard/                  # Power BI dashboard file
-│   └── vendor_performance_dashboard.pbix
+│   └── vendor_performance.pbix
+│ 
+├── sample_data/
+│   ├── begin_inventory.csv
+│   ├── end_inventory.csv
+│   ├── purchase_prices.csv
+│   ├── purchases
+│   ├── sales
+│   └── vendor_invoice
 ```
 
 ---
@@ -138,19 +146,26 @@ vendor-performance-analysis/
 ```bash
 git clone https://github.com/mathursakaar15/liquor-vendor-performance-analysis-sql-python-powerbi.git
 ```
-3. Load the CSVs and ingest into database:
+2. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+3. Download the [Kaggle Dataset](https://www.kaggle.com/datasets/ansarianam/vendor-performance-data) and create `data` folder inside root directory
+
+4. Paste the CSVs into `data` folder and ingest into database:
 ```bash
 py scripts/ingestion_db.py
 ```
-4. Create vendor summary table:
+5. Create vendor summary table:
 ```bash
 py scripts/get_vendor_summary.py
 ```
-5. Open and run notebooks:
-   - `notebooks/exploratory_data_analysis.ipynb`
-   - `notebooks/vendor_performance_analysis.ipynb`
-6. Open Power BI Dashboard:
-   - `dashboard/vendor_performance_dashboard.pbix`
+6. Open and run notebooks:
+   - `notebooks/Exploratory_Data_Analysis.ipynb`
+   - `notebooks/Vendor Performance Analysis.ipynb`
+7. Open Power BI Dashboard:
+   - `dashboard/vendor_performance.pbix`
+	If prompted, change source to `./vendor_sales_summary`
 
 ---
 <h2><a class="anchor" id="final-recommendations"></a>Final Recommendations</h2>
