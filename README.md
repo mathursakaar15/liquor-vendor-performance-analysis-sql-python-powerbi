@@ -165,7 +165,7 @@ py scripts/get_vendor_summary.py
    - `notebooks/Vendor Performance Analysis.ipynb`
 7. Open Power BI Dashboard:
    - `dashboard/vendor_performance.pbix`
-	If prompted, change source to `./vendor_sales_summary`
+   - If prompted, change source to `./vendor_sales_summary`
 
 ---
 <h2><a class="anchor" id="final-recommendations"></a>Final Recommendations</h2>
