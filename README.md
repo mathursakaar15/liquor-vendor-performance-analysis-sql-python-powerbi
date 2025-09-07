@@ -180,4 +180,5 @@ py scripts/get_vendor_summary.py
 <h2><a class="anchor" id="author--contact"></a>Author & Contact</h2>
 
 **Sakaar Mathur**    
-📧 Email: mathursakaar@gmail.com
+📧 Email: mathursakaar@gmail.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/sakaar-mathur-85a9b720a/)
